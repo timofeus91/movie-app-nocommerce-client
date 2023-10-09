@@ -1,37 +1,54 @@
 import React from 'react';
-import { View, Button, StyleSheet, SafeAreaView } from 'react-native';
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import ProfileScreen from "../ProfileScreen/ProfileScreen";
+import SearchScreen from "../SearchScreen/SearchScreen";
+import SingleChoiceScreen from "../SingleChoiceScreen/SingleChoiceScreen";
+import GroupChoiceScreen from "../GroupChoiceScreen/GroupChoiceScreen";
+import FriendsScreen from "../FriendsScreen/FriendsScreen";
+
+const Tab = createBottomTabNavigator();
 
  const Main = () =>  {
     return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.buttonContainer}>
-                <Button title="Поиск" onPress={() => {}} color="#6200EE" />
-            </View>
-            <View style={styles.buttonContainer}>
-                <Button title="Одиночный выбор" onPress={() => {}} color="#03DAC5" />
-            </View>
-            <View style={styles.buttonContainer}>
-                <Button title="Групповой выбор" onPress={() => {}} color="#018786" />
-            </View>
-            <View style={styles.buttonContainer}>
-                <Button title="Друзья" onPress={() => {}} color="#3700B3" />
-            </View>
-            <View style={styles.buttonContainer}>
-                <Button title="Профиль" onPress={() => {}} color="#BB86FC" />
-            </View>
-        </SafeAreaView>
+     <Tab.Navigator
+         screenOptions={{
+             tabBarActiveTintColor: '#6200EE',
+             tabBarInactiveTintColor: 'gray',
+             tabBarLabelStyle: { fontSize: 12 },
+             tabBarStyle: { backgroundColor: '#121212' },
+             headerShown: false,
+         }}
+     >
+         <Tab.Screen
+             name="Search"
+             component={SearchScreen}
+             options={{ tabBarLabel: 'Поиск' }}
+         />
+         <Tab.Screen
+             name="SingleChoice"
+             component={SingleChoiceScreen}
+             options={{ tabBarLabel: 'Одиночный выбор' }}
+         />
+
+         <Tab.Screen
+             name="GroupChoice"
+             component={GroupChoiceScreen}
+             options={{ tabBarLabel: 'Групповой выбор' }}
+         />
+
+         <Tab.Screen
+             name="Friends"
+             component={FriendsScreen}
+             options={{ tabBarLabel: 'Друзья' }}
+         />
+
+         <Tab.Screen
+             name="Profile"
+             component={ProfileScreen}
+             options={{ tabBarLabel: 'Профиль' }}
+         />
+     </Tab.Navigator>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#121212',
-        justifyContent: 'center',
-    },
-    buttonContainer: {
-        margin: 10,
-    }
-});
 
  export default Main
