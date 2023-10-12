@@ -8,35 +8,35 @@ import FriendsScreen from "../FriendsScreen/FriendsScreen";
 
 const Tab = createBottomTabNavigator();
 
- const Main = () =>  {
+const Main = () => {
     return (
-     <Tab.Navigator
-         screenOptions={{
-             tabBarActiveTintColor: '#6200EE',
-             tabBarInactiveTintColor: 'gray',
-             tabBarLabelStyle: { fontSize: 12 },
-             tabBarStyle: { backgroundColor: '#121212' },
-             headerShown: false,
-         }}
-     >
-         <Tab.Screen
-             name="Search"
-             component={SearchScreen}
-             options={{ tabBarLabel: 'Поиск' }}
-         />
-         <Tab.Screen
-             name="SingleChoice"
-             component={SingleChoiceScreen}
-             options={{ tabBarLabel: 'Одиночный выбор' }}
-         />
+        <Tab.Navigator
+            screenOptions={{
+                tabBarActiveTintColor: '#6200EE',
+                tabBarInactiveTintColor: 'gray',
+                tabBarLabelStyle: {fontSize: 12},
+                tabBarStyle: {backgroundColor: '#121212'},
+                headerShown: false,
+            }}
+        >
+            <Tab.Screen
+                name="Search"
+                component={SearchScreen}
+                options={{tabBarLabel: 'Поиск'}}
+            />
+            <Tab.Screen
+                name="SingleChoice"
+                component={SingleChoiceScreen}
+                options={{tabBarLabel: 'Одиночный выбор'}}
+            />
 
-         <Tab.Screen
-             name="GroupChoice"
-             component={GroupChoiceScreen}
-             options={{ tabBarLabel: 'Групповой выбор' }}
-         />
+            <Tab.Screen
+                name="GroupChoice"
+                component={GroupChoiceScreen}
+                options={{tabBarLabel: 'Групповой выбор'}}
+            />
 
-         <Tab.Screen
+            {/* <Tab.Screen
              name="Friends"
              component={FriendsScreen}
              options={{ tabBarLabel: 'Друзья' }}
@@ -46,9 +46,9 @@ const Tab = createBottomTabNavigator();
              name="Profile"
              component={ProfileScreen}
              options={{ tabBarLabel: 'Профиль' }}
-         />
-     </Tab.Navigator>
+         />*/}
+        </Tab.Navigator>
     );
 }
 
- export default Main
+export default Main
