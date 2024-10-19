@@ -1,15 +1,16 @@
-import {StatusBar} from 'expo-status-bar';
-import Main from "./screens/Main/Main";
+import React from "react";
 import {NavigationContainer} from "@react-navigation/native";
+import BottomTabNavigator from "./navigation/BottomTabNavigator/BottomTabNavigator";
+
 
 export default function App() {
     return (
-        <>
-            <StatusBar style="auto"/>
+
             <NavigationContainer>
-                <Main/>
+                <BottomTabNavigator />
             </NavigationContainer>
 
-        </>
+
+
     );
 }
