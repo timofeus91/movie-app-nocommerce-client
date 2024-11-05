@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import SettingsScreen from "../../screens/SettingsScreen/SettingsScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -27,10 +28,6 @@ const BottomTabNavigator = () => {
             <Tab.Screen
                 name="Settings"
                 component={SettingsScreen}
-                options={{
-                    tabBarIcon: ({ color }) => <Icon name="cog" size={20} color={color} />,
-                    tabBarLabel: () => <Text style={styles.label}>Settings</Text>,
-                }}
             />
         </Tab.Navigator>
     );
@@ -48,11 +45,7 @@ const RandomSearchScreen = () => (
     </View>
 );
 
-const SettingsScreen = () => (
-    <View style={styles.screen}>
-        <Text>Settings Screen</Text>
-    </View>
-);
+
 
 const styles = StyleSheet.create({
     screen: {
